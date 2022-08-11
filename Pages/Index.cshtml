@@ -3,7 +3,9 @@
 @{    
     ViewData["Title"] = "Home page";
 }
-<script>
+@section ddscript
+@{
+   <script>
   (function(h,o,u,n,d) {
     h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
     d=o.createElement(u);d.async=1;d.src=n
@@ -26,9 +28,10 @@
 
     DD_RUM.startSessionReplayRecording();
   })
-</script>
+   </script>
+}
 
 <div class="jumbotron">
     <h1>.NET 💜 Azure</h1>
-    <p class="lead">Example .NET app to Azure App Service. With the Datagog script for Real User Monitoring added onto it :) </p>
+    <p class="lead">Example .NET app to Azure App Service. With the Datagog script for Real User Monitoring added onto it :) - attempt 2 </p>
 </div>
