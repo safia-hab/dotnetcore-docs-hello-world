@@ -3,10 +3,32 @@
 @{    
     ViewData["Title"] = "Home page";
 }
+<script>
+  (function(h,o,u,n,d) {
+    h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
+    d=o.createElement(u);d.async=1;d.src=n
+    n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
+  })(window,document,'script','https://www.datadoghq-browser-agent.com/datadog-rum-v4.js','DD_RUM')
+  DD_RUM.onReady(function() {
+    DD_RUM.init({
+      clientToken: 'pube52f071dfdf1a3f50a435691e10899f4',
+      applicationId: '3aa03a50-2c13-4ef9-8e0c-d18095ddfa21',
+      site: 'datadoghq.com',
+      service: 'dotnetcoreapp',
+      
+      // Specify a version number to identify the deployed version of your application in Datadog 
+      // version: '1.0.0',
+      sampleRate: 100,
+      premiumSampleRate: 100,
+      trackInteractions: true,
+      defaultPrivacyLevel: 'mask-user-input',
+    });
 
-<div class="text-center">
-    <h1 class="display-4">Hello World from .Net 6</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <hr />
-    <div>Host operating system: @Model.OSVersion</div>
+    DD_RUM.startSessionReplayRecording();
+  })
+</script>
+
+<div class="jumbotron">
+    <h1>.NET 💜 Azure</h1>
+    <p class="lead">Example .NET app to Azure App Service. With the Datagog script for Real User Monitoring added onto it :) </p>
 </div>
