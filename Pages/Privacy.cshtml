@@ -3,6 +3,33 @@
 @{
     ViewData["Title"] = "Privacy Policy";
 }
+@section ddscript
+@{
+   <script>
+  (function(h,o,u,n,d) {
+    h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
+    d=o.createElement(u);d.async=1;d.src=n
+    n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
+  })(window,document,'script','https://www.datadoghq-browser-agent.com/datadog-rum-v4.js','DD_RUM')
+  DD_RUM.onReady(function() {
+    DD_RUM.init({
+      clientToken: 'pube52f071dfdf1a3f50a435691e10899f4',
+      applicationId: '3aa03a50-2c13-4ef9-8e0c-d18095ddfa21',
+      site: 'datadoghq.com',
+      service: 'dotnetcoreapp',
+      
+      // Specify a version number to identify the deployed version of your application in Datadog 
+      // version: '1.0.0',
+      sampleRate: 100,
+      premiumSampleRate: 100,
+      trackInteractions: true,
+      defaultPrivacyLevel: 'mask-user-input',
+    });
+
+    DD_RUM.startSessionReplayRecording();
+  })
+   </script>
+}
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<p>Use this page to detail your site's privacy policy.  Adding dd script as a section on the privacy page</p>
